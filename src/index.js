@@ -1,3 +1,4 @@
+import { react } from '@babel/types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
@@ -43,12 +44,28 @@ class Square extends React.Component {
     }
   }
   
+  class ShoppingList extends React.Component {
+    render() {
+      return (
+        <div className="shopping-list">
+          <h1>Shopping List for {this.props.name}</h1>
+          <ul>
+            <li>Instagram</li>
+            <li>WhatsApp</li>
+            <li>Oculus</li>
+          </ul>
+        </div>
+      );
+    }
+  }
+
   class Game extends React.Component {
     render() {
       return (
         <div className="game">
           <div className="game-board">
             <Board />
+            <ShoppingList name="Mark"/>
           </div>
           <div className="game-info">
             <div>{/* status */}</div>
